@@ -1,0 +1,22 @@
+#botao {
+    display: flex;
+    padding: 10px 0;
+}
+
+#botao a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px 25px;
+    border: 1px white solid;
+}
+
+#botao a h2 {
+    font-size: 35px;
+}
+
+#botao a span {
+    font-size: 20px;
+}

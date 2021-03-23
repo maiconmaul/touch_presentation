@@ -1,0 +1,79 @@
+#page-index {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#page-index .side-menu {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-index .side-menu .logo-container {
+    width: 300px;
+    margin: 30px 0 0 30px;
+}
+
+#page-index .side-menu .button-container {
+    padding: 0px 0px 0px 60px;
+    margin-top: 100px;
+}
+
+#page-index .side-menu .button-container>h2 {
+    display: inline-block;
+    border: white 1px solid;
+    padding: 5px 15px 0px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+#page-index .side-menu .footer {
+    display: flex;
+    margin: auto 0px 0px;
+    padding: 0 0 30px 20px;
+}
+
+#page-index .side-menu .footer>div:first-child {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+#page-index .side-menu .footer>div:last-child {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-index .side-menu .footer>div>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    height: 50%;
+}
+
+#page-index .side-menu .footer img {
+    height: 25px;
+    margin-right: 10px;
+}
+
+#page-index .image-container {
+    flex: 1;
+}
+
+#page-index .image-container div {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+#page-index .image-container div img {
+    width: 100%;
+}
