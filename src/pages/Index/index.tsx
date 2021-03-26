@@ -1,5 +1,6 @@
-import react from 'react'
+import react, { useEffect, useState } from 'react'
 import DefaultButton from '../../elements/DefaultButton'
+// import Router from 'react-router'
 
 import logo from '../../assets/img/logo-psg.png'
 import complexoImg from '../../assets/img/buildings/complexo-index.png'
@@ -9,9 +10,38 @@ import areaIcon from '../../assets/img/move.svg'
 import bedIcon from '../../assets/img/bed.svg'
 
 import './style.css'
+import { useHistory } from "react-router-dom";
 
 
 function Index() {
+    const history = useHistory();
+    var [timeOutRunning, setTimeOutRunning] = useState(false)
+    
+    function handleTimeout() {
+        var time: NodeJS.Timeout;
+        window.onload = resetTimer;
+        
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+        function resetTimer() {
+            console.log("Reset timer")
+            clearTimeout(time);
+            time = setTimeout(() =>{
+                if (window.location.pathname != "/video"){
+                    console.log("timeout")
+                    setTimeOutRunning(true)
+                    history.push("/video")
+                }
+            }, 10000)
+        }
+    };
+
+    useEffect(() => {
+        if (!timeOutRunning){
+            handleTimeout()
+        }
+    })
+
     return (
         <div id="page-index">
             <div className="side-menu">

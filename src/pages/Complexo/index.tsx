@@ -10,8 +10,10 @@ import locationIcon from '../../assets/img/location.png'
 import tourVirtualIcon from '../../assets/img/tour-virtual.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
 import complexoBuilding from '../../assets/img/complexo-building.jpg'
-import './style.css'
 import ImageButton from '../../elements/ImageButton'
+
+
+import './style.css'
 
 function ComplexoIndex() {
     return (
@@ -26,7 +28,7 @@ function ComplexoIndex() {
                     <ImageButton title="Áreas Comuns" image={commonAreasIcon}/>
                     <ImageButton title="Unidades" image={unitsIcon}/>
                     <ImageButton title="Localização" image={locationIcon}/>
-                    <ImageButton title="Tour Virtual" image={tourVirtualIcon}/>
+                    <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true}/>
                 </div>
                 <div className="footer">
                     <Link to="">

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './style.css'
 
 interface DefaultButtonProps {
@@ -11,12 +11,19 @@ interface DefaultButtonProps {
 
 
 const DefaultButton: React.FC<DefaultButtonProps> = ({ title, link, description, children }: DefaultButtonProps) => {
+    let history = useHistory()
+    var destination = link === undefined ? "" : link
+    console.log(destination)
     return (
         <div id="botao">
-            <Link to={link === undefined ? "" : link}>
+            <button onClick={() => history.push(destination)} >
                 <h2>{title}</h2>
                 <span>{description}</span>
-            </Link>
+            </button>
+            {/* <Link to={destination}>
+                <h2>{title}</h2>
+                <span>{description}</span>
+            </Link> */}
         </div>
     )
 }
