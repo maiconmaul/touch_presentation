@@ -14,7 +14,7 @@ interface ImageButtonProps {
 const ImageButton: React.FC<ImageButtonProps> = ({ title, border = false, link, image, children }: ImageButtonProps) => {
     let history = useHistory()
     let classNameText = border === true ? "imagebutton imagebutton-border" : "imagebutton"
-    let destination = link === undefined ? "" : link
+    let destination = link === undefined ? "#" : link
     return (
         <div className={classNameText}>
             <button onClick={() => history.push(destination)}>

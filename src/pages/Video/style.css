@@ -1,4 +1,19 @@
 #id-pagevideo{
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* #id-pagevideo .divteste{
+    width: 100px;
+    height: 400px;
+    background-color: hotpink;
+} */
+
+#id-pagevideo video{
+    height: 85vh;
+    overflow: hidden;
+    border: 5px dashed white;
 }

@@ -34,7 +34,7 @@
     padding: 0 0 30px 20px;
 }
 
-#page-complexo-index .side-menu .footer a{
+#page-complexo-index .side-menu .footer button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,9 +42,12 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
-#page-complexo-index .side-menu .footer a img{
+#page-complexo-index .side-menu .footer button img{
     margin-right: 20px;
 }
 

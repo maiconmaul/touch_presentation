@@ -1,5 +1,9 @@
-import react from 'react'
-import { Link } from 'react-router-dom'
+import react, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+
+
+import IdleTimer from '../../elements/IdleTimer'
+
 
 import logo from '../../assets/img/logo-psg.png'
 import videoIcon from '../../assets/img/video.png'
@@ -16,6 +20,25 @@ import ImageButton from '../../elements/ImageButton'
 import './style.css'
 
 function ComplexoIndex() {
+    let history = useHistory()
+
+    const [isTimeout, setIsTimeout] = useState(false)
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+          timeout: 120, //expire after 10 seconds
+          onTimeout: () => {
+            console.log("expired")
+            setIsTimeout(true);
+            history.push("/video")
+          }
+        });
+    
+        return () => {
+          timer.cleanUp();
+        };
+      }, []);
+
     return (
         <div id="page-complexo-index">
             <div className="side-menu">
@@ -31,10 +54,10 @@ function ComplexoIndex() {
                     <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true}/>
                 </div>
                 <div className="footer">
-                    <Link to="">
+                    <button onClick={() => { history.goBack()}}>
                         <img src={backButtonIcon} alt=""/>
                         Voltar ao Menu Principal
-                    </Link>
+                    </button>
                 </div>
             </div>
             <div className="image-container">

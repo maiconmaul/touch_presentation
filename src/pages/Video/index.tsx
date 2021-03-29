@@ -1,8 +1,14 @@
 import react, { useEffect } from 'react'
 import { useHistory } from 'react-router'
 
-function VideoPage() {
+import './style.css'
+
+
+import video from '../../assets/videos/movie2.mp4'
+
+function VideoPage(){
     let history = useHistory()
+
     useEffect(() => {
         document.onmousedown = () => {
             history.goBack()
@@ -12,6 +18,7 @@ function VideoPage() {
 
     return (
         <div id="id-pagevideo">
+            <video src={video} typeof="video/mp4" autoPlay loop muted/>
         </div>
     )
 }
