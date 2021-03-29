@@ -1,5 +1,5 @@
-import react, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 
 import IdleTimer from '../../elements/IdleTimer'
@@ -22,14 +22,14 @@ import './style.css'
 function ComplexoIndex() {
     let history = useHistory()
 
-    const [isTimeout, setIsTimeout] = useState(false)
+    // const [isTimeout, setIsTimeout] = useState(false)
 
     useEffect(() => {
         const timer = new IdleTimer({
-          timeout: 120, //expire after 10 seconds
+          timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
           onTimeout: () => {
             console.log("expired")
-            setIsTimeout(true);
+            // setIsTimeout(true);
             history.push("/video")
           }
         });
@@ -37,7 +37,7 @@ function ComplexoIndex() {
         return () => {
           timer.cleanUp();
         };
-      }, []);
+      });
 
     return (
         <div id="page-complexo-index">

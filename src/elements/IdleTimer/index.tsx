@@ -1,5 +1,4 @@
-import react, { Component } from 'react'
-import { hasOnlyExpressionInitializer } from 'typescript';
+import { Component } from 'react'
 
 type IdleTimerProps = {
     timeout: number

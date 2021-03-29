@@ -1,5 +1,5 @@
-import react, { useEffect, useState } from 'react'
-import { useHistory, useParams } from "react-router-dom";
+import { useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 
 import DefaultButton from '../../elements/DefaultButton'
 import IdleTimer from '../../elements/IdleTimer'
@@ -21,14 +21,14 @@ import './style.css'
 function Index() {
     const history = useHistory();
 
-    const [isTimeout, setIsTimeout] = useState(false)
+    // const [isTimeout, setIsTimeout] = useState(false)
 
     useEffect(() => {
         const timer = new IdleTimer({
-          timeout: 120, //expire after 10 seconds
+          timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
           onTimeout: () => {
             console.log("expired")
-            setIsTimeout(true);
+            // setIsTimeout(true);
             history.push("/video")
           }
         });
@@ -36,7 +36,7 @@ function Index() {
         return () => {
           timer.cleanUp();
         };
-      }, []);
+      });
 
     return (
         <div id="page-index">
@@ -45,7 +45,6 @@ function Index() {
                     <img src={logo} alt="Logo Planeta" />
                 </div>
                 <div className="button-container">
-                    <h1>{isTimeout ? "TIMEOUT" : "ACTIVE"}</h1>
                     <DefaultButton title="COMPLEXO" link="/complexo"/>
                     <DefaultButton title="ellipse tower" description="Torre Comercial" />
                     <DefaultButton title="highline" description="Apartamentos Residenciais de 55 a 110m²" />
