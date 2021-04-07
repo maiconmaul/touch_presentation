@@ -43,15 +43,15 @@ function ComplexoIndex() {
         <div id="page-complexo-index">
             <div className="side-menu">
                 <div className="logo-container">
-                    <img src={logo} alt="Logo Planeta" />
+                    <img src={logo} alt="Logo Planeta"/>
                 </div>
                 <div className="button-container">
-                    <ImageButton title="Vídeo" image={videoIcon}/>
-                    <ImageButton title="Projeto" image={projectIcon}/>
-                    <ImageButton title="Áreas Comuns" image={commonAreasIcon}/>
-                    <ImageButton title="Unidades" image={unitsIcon}/>
-                    <ImageButton title="Localização" image={locationIcon}/>
-                    <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true}/>
+                    <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right"/>
+                    <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left"/>
+                    <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right"/>
+                    <ImageButton title="Unidades" image={unitsIcon} extraClass="slide-left"/>
+                    <ImageButton title="Localização" image={locationIcon} extraClass="slide-right"/>
+                    <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true} extraClass="slide-left"/>
                 </div>
                 <div className="footer">
                     <button onClick={() => { history.goBack()}}>
@@ -61,7 +61,7 @@ function ComplexoIndex() {
                 </div>
             </div>
             <div className="image-container">
-                <img src={complexoBuilding} alt=""/>
+                <img src={complexoBuilding} className="teste fade-in" alt=""/>
             </div>
         </div>
     )

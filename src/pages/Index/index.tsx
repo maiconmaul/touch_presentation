@@ -13,11 +13,6 @@ import bedIcon from '../../assets/img/bed.svg'
 
 import './style.css'
 
-
-// interface IndexRouteParams {
-//     runtimer: string
-// }
-
 function Index() {
     const history = useHistory();
 
@@ -45,9 +40,9 @@ function Index() {
                     <img src={logo} alt="Logo Planeta" />
                 </div>
                 <div className="button-container">
-                    <DefaultButton title="COMPLEXO" link="/complexo"/>
-                    <DefaultButton title="ellipse tower" description="Torre Comercial" />
-                    <DefaultButton title="highline" description="Apartamentos Residenciais de 55 a 110m²" />
+                    <DefaultButton title="COMPLEXO" link="/complexo" />
+                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" link="/gallery"/>
+                    <DefaultButton title="highline (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" link="/panorama" />
                     <DefaultButton title="millennium" description="Apartamentos Residenciais de 127 a 201m²" />
                 </div>
                 <div className="footer">

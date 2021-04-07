@@ -13,16 +13,22 @@ interface DefaultButtonProps {
 const DefaultButton: React.FC<DefaultButtonProps> = ({ title, link, description, children }: DefaultButtonProps) => {
     let history = useHistory()
     var destination = link === undefined ? "" : link
+
+    function handleClick(dest: string){
+        console.log(dest)
+        if (dest !== "" && dest !== undefined && dest !== " "){
+            history.push(dest)
+        }
+    }
+
     return (
-        <div id="botao">
-            <button onClick={() => history.push(destination)} >
-                <h2>{title}</h2>
-                <span>{description}</span>
-            </button>
-            {/* <Link to={destination}>
-                <h2>{title}</h2>
-                <span>{description}</span>
-            </Link> */}
+        <div>
+            <div id="botao" className="scale-in-ver-center">
+                <button onClick={() => handleClick(destination)} >
+                    <h2>{title}</h2>
+                    <span>{description}</span>
+                </button>
+            </div>
         </div>
     )
 }
