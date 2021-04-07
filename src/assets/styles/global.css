@@ -11,7 +11,8 @@ hmtl, body, #root {
 
 body {
     background-image: url('../img/background.png');
-    /* background: rgb(0, 46, 43); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 body, input, button, textarea {

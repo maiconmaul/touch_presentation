@@ -8,8 +8,13 @@
 # testing
 /coverage
 
+/src/assets/img/panoramas
+/.jpg
+
 # production
 /build
+
+build.zip*
 
 # misc
 .DS_Store
