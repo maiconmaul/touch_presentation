@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 
+// import { FullScreen, useFullScreenHandle } from "react-full-screen";
+
 import DefaultButton from '../../elements/DefaultButton'
 import IdleTimer from '../../elements/IdleTimer'
 
@@ -14,24 +16,19 @@ import bedIcon from '../../assets/img/bed.svg'
 import './style.css'
 
 function Index() {
-    const history = useHistory();
-
-    // const [isTimeout, setIsTimeout] = useState(false)
+    const history = useHistory()
 
     useEffect(() => {
         const timer = new IdleTimer({
-          timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
-          onTimeout: () => {
-            console.log("expired")
-            // setIsTimeout(true);
-            history.push("/video")
-          }
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/video")
+            }
         });
-    
         return () => {
-          timer.cleanUp();
+            timer.cleanUp();
         };
-      });
+    });
 
     return (
         <div id="page-index">
@@ -40,10 +37,10 @@ function Index() {
                     <img src={logo} alt="Logo Planeta" />
                 </div>
                 <div className="button-container">
-                    <DefaultButton title="COMPLEXO" link="/complexo" />
-                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" link="/gallery"/>
+                    <DefaultButton title="COMPLEXO" link="/complexo"/>
+                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" link="/gallery" />
                     <DefaultButton title="highline (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" link="/panorama" />
-                    <DefaultButton title="millennium" description="Apartamentos Residenciais de 127 a 201m²" />
+                    <DefaultButton title="millennium (MAQUETE)" description="Apartamentos Residenciais de 127 a 201m²" link="/tour-virtual"/>
                 </div>
                 <div className="footer">
                     <div>
@@ -51,8 +48,8 @@ function Index() {
                             <img src={areaIcon} alt="" />
                             <p>
                                 Residenciais: 55 A 201m²<br />
-                                Comercial: 10 Lajes Corporativas
-                            </p>
+                            Comercial: 10 Lajes Corporativas
+                        </p>
                         </div>
                         <div>
                             <img src={bedIcon} alt="" />
@@ -68,8 +65,8 @@ function Index() {
                             <img src={checkedIcon} alt="" />
                             <p>
                                 Fase 1: Set/24 | Fase 2: <br />
-                                Mar/25 | Fase 3: Mar/26
-                            </p>
+                            Mar/25 | Fase 3: Mar/26
+                        </p>
                         </div>
                     </div>
                 </div>

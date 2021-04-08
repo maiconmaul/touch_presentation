@@ -9,7 +9,6 @@
 /coverage
 
 /src/assets/img/panoramas
-/.jpg
 
 # production
 /build
