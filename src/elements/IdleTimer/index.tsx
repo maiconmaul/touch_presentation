@@ -29,7 +29,7 @@ class IdleTimer extends Component<IdleTimerProps>{
     }
 
     startInterval() {
-        console.log("startInterval")
+        // console.log("startInterval")
         this.updateExpiredTime();
 
 
@@ -45,19 +45,19 @@ class IdleTimer extends Component<IdleTimerProps>{
     }
 
     updateExpiredTime() {
-        console.log("updateExpiredTime")
+        // console.log("updateExpiredTime")
         localStorage.setItem("_expiredTime", (Date.now() + this.timeout * 1000).toString());
     }
 
     tracker() {
-        console.log("tracker")
+        // console.log("tracker")
         window.addEventListener("mousemove", this.eventHandler);
         window.addEventListener("scroll", this.eventHandler);
         window.addEventListener("keydown", this.eventHandler);
     }
 
     cleanUp() {
-        console.log("cleanUp")
+        // console.log("cleanUp")
         localStorage.removeItem("_expiredTime");
         clearInterval(this.interval);
         window.removeEventListener("mousemove", this.eventHandler);

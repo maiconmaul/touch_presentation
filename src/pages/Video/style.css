@@ -1,19 +1,118 @@
-#id-pagevideo{
+#pagevideo {
+    position: relative;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+#pagevideo .top-container {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+
+    margin-top: 30px;
+}
+
+#pagevideo .top-container .logo-container {
+    width: 300px;
+    margin: 0px 30px;
+}
+
+#pagevideo .horizontal-line{
+    background-color: #fff;
+    height: 10px;
+    width: 100%;
+    /* margin: 0px 0px 0px 0px; */
+}
+
+#pagevideo .top-container button{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-/* #id-pagevideo .divteste{
-    width: 100px;
-    height: 400px;
-    background-color: hotpink;
-} */
 
-#id-pagevideo video{
-    height: 85vh;
-    overflow: hidden;
-    border: 5px dashed white;
+    margin: -10px 30px 0px;
+
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+#pagevideo .middle-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#pagevideo .middle-container .vertical-line{
+    background-color: #fff;
+    width: 10px;
+    height: 100%;
+    margin: 20px 10px 0px 75px;
+}
+
+#pagevideo .middle-container div.vertical-line:last-child{
+    margin: -15px 30px 0px 10px;
+    height: calc(100% + 35px);
+}
+
+#pagevideo .middle-container main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: aqua; */
+    flex-grow: 1;
+    /* max-height: 100%; */
+    /* overflow: hidden; */
+}
+
+
+
+#pagevideo .middle-container main span{
+    margin-top: -30px;
+    margin-bottom: 10px;
+    width: 90%;
+    text-align: right;
+
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+}
+
+#pagevideo .middle-container main video {
+    min-width: 10%;
+    width: 100%; 
+    max-width: 100%; 
+    height: auto;
+    max-height: 803px;
+    /* overflow: unset; */
+    /* object-fit: cover; */
+    /* border: 5px solid red; */
+}
+
+#pagevideo > .horizontal-line{
+    margin: 10px 30px 0px 75px;
+    width: auto;
+}
+
+#pagevideo footer {
+    display: flex;
+    padding: 20px 20px 30px;
+}
+
+#pagevideo footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#pagevideo footer button img {
+    margin-right: 20px;
 }

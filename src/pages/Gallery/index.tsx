@@ -7,10 +7,10 @@ import "./carousel.min.css";
 
 
 function GalleryPage(){
-    let history = useHistory()
+    let { goBack } = useHistory()
     return(
         <div id="galeria">
-            <Carousel emulateTouch infiniteLoop showThumbs={false}>
+            <Carousel emulateTouch infiniteLoop showThumbs={false} autoPlay={false} >
                 <div>
                     <img src="https://images.wallpaperscraft.com/image/road_marking_bridge_123398_1280x720.jpg" alt="" />
                     <p className="legend">Legend 1</p>
@@ -25,7 +25,7 @@ function GalleryPage(){
                 </div>
             </Carousel> 
 
-            <button onClick={() => { history.goBack()}}>
+            <button onClick={() => { goBack()}}>
                 <img src={backButtonIcon} alt=""/>
                 Voltar
             </button>

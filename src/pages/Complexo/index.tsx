@@ -46,8 +46,8 @@ function ComplexoIndex() {
                     <img src={logo} alt="Logo Planeta"/>
                 </div>
                 <div className="button-container">
-                    <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right"/>
-                    <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left"/>
+                    <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right" link="/video"/>
+                    <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left" link="/projeto"/>
                     <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right"/>
                     <ImageButton title="Unidades" image={unitsIcon} extraClass="slide-left"/>
                     <ImageButton title="Localização" image={locationIcon} extraClass="slide-right"/>
