@@ -4,20 +4,14 @@ import { useHistory } from 'react-router'
 import './style.css'
 
 import logo from '../../assets/img/logo-psg.png'
-import video from '../../assets/videos/movie2.mp4'
+import video from '../../assets/videos/movie.mp4'
 import backButtonIcon from '../../assets/img/backbutton.png'
 
 
 function VideoPage() {
     let history = useHistory()
-    // useEffect(() => {
-    //     document.onmousedown = () => {
-    //         // history.goBack()
-    //         document.onmousedown = null
-    //     }
-    // })
     return (
-        <div id="pagevideo">
+        <div id="pagevideo" className="fade-in-long">
             <div className="top-container">
                 <div className="logo-container">
                     <img src={logo} alt="Logo Planeta" />
@@ -31,7 +25,7 @@ function VideoPage() {
                 <div className="vertical-line" />
                 <main>
                     <span>Vídeo</span>  
-                    <video src={video} typeof="video/mp4" autoPlay loop muted/>
+                    <video src={video} typeof="video/mp4" className="fade-in-long" autoPlay loop muted/>
                 </main>
                 <div className="vertical-line" />
             </div>

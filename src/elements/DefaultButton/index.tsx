@@ -1,30 +1,21 @@
-import React, { ReactNode } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { MouseEventHandler, ReactNode } from 'react'
 import './style.css'
 
-interface DefaultButtonProps {
+interface DefaultLinkProps {
     title: string;
-    link?: string;
+    extraClass?: string;
     description?: string;
     children?: ReactNode;
+    onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
+const DefaultLink: React.FC<DefaultLinkProps> = ({ title, extraClass, description, children, onClick }: DefaultLinkProps) => {
 
-const DefaultButton: React.FC<DefaultButtonProps> = ({ title, link, description, children }: DefaultButtonProps) => {
-    let history = useHistory()
-    var destination = link === undefined ? "" : link
-
-    function handleClick(dest: string){
-        console.log(dest)
-        if (dest !== "" && dest !== undefined && dest !== " "){
-            history.push(dest)
-        }
-    }
-
+    const classStyle = (extraClass !== "" && extraClass !== undefined) ? extraClass : `scale-in-ver-center`
     return (
         <div>
-            <div id="botao" className="scale-in-ver-center">
-                <button onClick={() => handleClick(destination)} >
+            <div id="botao" className={classStyle}>
+                <button onClick={onClick} className={extraClass}>
                     <h2>{title}</h2>
                     <span>{description}</span>
                 </button>
@@ -33,4 +24,4 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({ title, link, description,
     )
 }
 
-export default DefaultButton;
+export default DefaultLink;

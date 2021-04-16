@@ -13,6 +13,7 @@ import unitsIcon from '../../assets/img/units.png'
 import locationIcon from '../../assets/img/location.png'
 import tourVirtualIcon from '../../assets/img/tour-virtual.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
+// import complexoBuildingProgressive from '../../assets/img/complexo-building-progressive.jpg'
 import complexoBuilding from '../../assets/img/complexo-building.jpg'
 import ImageButton from '../../elements/ImageButton'
 
@@ -28,9 +29,7 @@ function ComplexoIndex() {
         const timer = new IdleTimer({
           timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
           onTimeout: () => {
-            console.log("expired")
-            // setIsTimeout(true);
-            history.push("/video")
+            history.push("/videofull")
           }
         });
     
@@ -40,7 +39,7 @@ function ComplexoIndex() {
       });
 
     return (
-        <div id="page-complexo-index">
+        <div id="page-complexo-index" className="fade-in">
             <div className="side-menu">
                 <div className="logo-container">
                     <img src={logo} alt="Logo Planeta"/>
@@ -49,9 +48,9 @@ function ComplexoIndex() {
                     <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right" link="/video"/>
                     <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left" link="/projeto"/>
                     <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right"/>
-                    <ImageButton title="Unidades" image={unitsIcon} extraClass="slide-left"/>
+                    <ImageButton title="Unidades" image={unitsIcon} extraClass="slide-left" link="/unidades"/>
                     <ImageButton title="Localização" image={locationIcon} extraClass="slide-right"/>
-                    <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true} extraClass="slide-left"/>
+                    <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true} extraClass="slide-left" link="/tour-virtual"/>
                 </div>
                 <div className="footer">
                     <button onClick={() => { history.goBack()}}>

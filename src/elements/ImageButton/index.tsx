@@ -18,7 +18,6 @@ const ImageButton: React.FC<ImageButtonProps> = ({ title, border = false, link, 
     let destination = link === undefined ? "" : link
 
     function handleClick(dest: string){
-        console.log(dest)
         if (dest !== "" && dest !== undefined && dest !== " "){
             history.push(dest)
         }

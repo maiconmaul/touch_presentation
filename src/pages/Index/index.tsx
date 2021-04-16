@@ -12,6 +12,8 @@ import maplocationIcon from '../../assets/img/placeholder.svg'
 import checkedIcon from '../../assets/img/checked.svg'
 import areaIcon from '../../assets/img/move.svg'
 import bedIcon from '../../assets/img/bed.svg'
+import complexoBuildingProgressive from '../../assets/img/complexo-building-progressive.jpg'
+import complexoBuilding from '../../assets/img/complexo-building.jpg'
 
 import './style.css'
 
@@ -22,7 +24,7 @@ function Index() {
         const timer = new IdleTimer({
             timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
             onTimeout: () => {
-                history.push("/video")
+                history.push("/videofull")
             }
         });
         return () => {
@@ -30,17 +32,26 @@ function Index() {
         };
     });
 
+    function handleDestination(dest: string) {
+        if (dest !== "" && dest !== undefined && dest !== " ") {
+            history.push(dest)
+        }
+    }
+
+    console.log(complexoBuildingProgressive)
+    console.log(complexoBuilding)
+
     return (
-        <div id="page-index">
+        <div id="page-index" className="fade-in">
             <div className="side-menu">
                 <div className="logo-container">
                     <img src={logo} alt="Logo Planeta" />
                 </div>
                 <div className="button-container">
-                    <DefaultButton title="COMPLEXO" link="/complexo"/>
-                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" link="/gallery" />
-                    <DefaultButton title="highline (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" link="/panorama" />
-                    <DefaultButton title="millennium (MAQUETE)" description="Apartamentos Residenciais de 127 a 201m²" link="/tour-virtual"/>
+                    <DefaultButton title="COMPLEXO" onClick={() => handleDestination("/complexo")} />
+                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" onClick={() => handleDestination("/gallery")} />
+                    <DefaultButton title="highline (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/panorama")} />
+                    <DefaultButton title="millennium" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => console.log("rour virtual")} />
                 </div>
                 <div className="footer">
                     <div>

@@ -32,6 +32,7 @@
     display: flex;
     margin: auto 0px 0px;
     padding: 0 0 30px 20px;
+    z-index: 99;
 }
 
 #page-complexo-index .side-menu .footer button {

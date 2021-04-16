@@ -8,7 +8,7 @@ function VirtualTourPage(){
 
     return(
         <div id="tour-virtua-page">
-            <iframe src="https://rd3space.com/rd3viewer/planeta/?target=Maquete3D" title="maquete"></iframe>
+            <iframe src="https://rd3space.com/rd3viewer/construtoraplaneta/?target=Maquete3D" title="maquete"></iframe>
             <button onClick={() => { history.goBack()}}>
                 <img src={backButtonIcon} alt=""/>
                 Voltar

@@ -16,7 +16,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ title, onClick, extraClass,
             <div id="action-button" className={`${extraClass}`} >
                 <button onClick={onClick} >
                     <h2>{title}</h2>
-                    {/* <span>{extraClass}</span> */}
+                    {/* <span>{description}</span> */}
                 </button>
             </div>
         </div>

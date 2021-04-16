@@ -18,7 +18,7 @@ function PanoramaPage(){
                 autoLoad
                 showZoomCtrl={false}
                 showFullscreenCtrl={false}
-                previewTitle="Visão do terceiro andar"
+                // previewTitle="Visão do terceiro andar"
             >        
             </Pannellum>
             <button onClick={() => { history.goBack()}}>
