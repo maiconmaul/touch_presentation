@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import CommonAreasPage from './pages/CommonAreas';
 import ComplexoIndex from './pages/Complexo';
 import GalleryPage from './pages/Gallery';
 import Index from './pages/Index';
@@ -22,6 +23,7 @@ function Routes(): ReactElement {
       <Route path="/tour-virtual" exact component={VirtualTourPage} />
       <Route path="/projeto" component={ProjectPage} />
       <Route path="/unidades" component={UnitysPage} />
+      <Route path="/areascomuns" component={CommonAreasPage} />
       {/* <Redirect to="/" /> */}
     </BrowserRouter>
   );

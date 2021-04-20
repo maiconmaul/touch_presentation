@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
 import ActionButton from '../../elements/ActionButton';
@@ -18,10 +18,23 @@ import projetoDatasheetInfo3 from '../../assets/img/projeto-datasheet-info3.png'
 import projetoDatasheetInfo4 from '../../assets/img/projeto-datasheet-info4.png'
 
 import './style.css'
+import IdleTimer from '../../elements/IdleTimer';
 
 function ProjectPage() {
     let history = useHistory()
     const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     return (
         <div id="pageproject">

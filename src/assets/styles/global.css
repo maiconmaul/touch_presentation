@@ -1,3 +1,12 @@
+::-moz-selection {
+    /* Code for Firefox */
+    background: transparent;
+}
+
+::selection {
+    background: transparent;
+}
+
 hmtl, body, #root {
     height: 100vh;
 }

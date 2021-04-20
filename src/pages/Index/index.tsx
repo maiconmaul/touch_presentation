@@ -49,9 +49,9 @@ function Index() {
                 </div>
                 <div className="button-container">
                     <DefaultButton title="COMPLEXO" onClick={() => handleDestination("/complexo")} />
-                    <DefaultButton title="ellipse tower (GALERIA)" description="Torre Comercial" onClick={() => handleDestination("/gallery")} />
-                    <DefaultButton title="highline (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/panorama")} />
-                    <DefaultButton title="millennium" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => console.log("rour virtual")} />
+                    <DefaultButton title="ELLIPSE TOWER" description="Torre Comercial"/>
+                    <DefaultButton title="HIGHLINE (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/panorama")} />
+                    <DefaultButton title="MILLENNIUM" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => console.log("rour virtual")} />
                 </div>
                 <div className="footer">
                     <div>

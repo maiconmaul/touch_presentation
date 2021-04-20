@@ -1,0 +1,176 @@
+#commonareas-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#commonareas-page .top-container {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    
+    margin-top: 30px;
+}
+
+#commonareas-page .top-container .logo-container {
+    width: 300px;
+    margin: 0px 30px;
+}
+
+#commonareas-page .horizontal-line{
+    background-color: #fff;
+    height: 10px;
+    width: 100%;
+}
+
+#commonareas-page .top-container button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: -10px 30px 0px;
+    
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+#commonareas-page .middle-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#commonareas-page .middle-container .vertical-line{
+    background-color: #fff;
+    width: 10px;
+    height: 100%;
+    margin: 20px 10px 0px 75px;
+}
+
+#commonareas-page .middle-container div.vertical-line:last-child{
+    margin: -15px 30px 0px 10px;
+    height: calc(100% + 35px);
+}
+
+#commonareas-page .middle-container main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1775px;
+    width: 1775px;
+    position: relative;
+
+    margin-top: -50px;
+}
+#commonareas-page .middle-container main>button{
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    outline: none;
+}
+
+#commonareas-page .middle-container main>button img{
+    height: 100px;
+}
+
+.carousel .slide img {
+    max-height: 700px;  /* change this to whatever you want */
+    width: auto;
+    z-index: 5;
+}
+
+#commonareas-page .middle-container main>div{
+    display: flex;
+    width: 1245px;
+    height: 700px;
+    overflow: hidden;
+}
+
+#commonareas-page .middle-container main span{
+    margin-top: -30px;
+    margin-bottom: 10px;
+    width: 90%;
+    text-align: right;
+
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+}
+
+#commonareas-page .middle-container main .buttom-container{
+    position: fixed;
+    bottom: 99px;
+    left: 360px;
+    height: 100px;
+    width: 600px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#commonareas-page .middle-container main .thumb-container-parent{
+    position: fixed;
+    bottom: 99px;
+    left: 85px;
+    height: 380px;
+    width: 275px;
+    z-index: 1;
+    /* overflow: hidden; */
+}
+
+#commonareas-page .middle-container main .thumb-container-child{
+    width: 295px;
+    height: 380px;
+    overflow-y: scroll;
+    margin-right: -20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#commonareas-page .middle-container main .thumb-container-child div{
+    margin: 10px 0px;
+}
+
+#commonareas-page .middle-container main .thumb-container-child img{
+    max-height: 100px;
+    width: 177px;
+    object-fit: cover;
+}
+
+#commonareas-page .middle-container main .thumb-container-child img.selected{
+    opacity: 0.6;
+}
+
+#commonareas-page > .horizontal-line{
+    margin: 10px 30px 0px 75px;
+    width: auto;
+}
+
+#commonareas-page footer {
+    display: flex;
+    padding: 20px 20px 30px;
+}
+
+#commonareas-page footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#commonareas-page footer button img {
+    margin-right: 20px;
+}

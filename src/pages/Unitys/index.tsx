@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import DefaultButton from '../../elements/DefaultButton'
@@ -15,12 +15,25 @@ import ellipseImg from '../../assets/img/buildings/ellipse-tower.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
 
 import './style.css'
+import IdleTimer from '../../elements/IdleTimer'
 
 function UnitysPage() {
     const history = useHistory()
 
     const [index, setIndex] = useState(4)
 
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
+    
     function delayFadeIn(delay: string) {
         return {
             "-webkit-animation": "fade-in 0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",

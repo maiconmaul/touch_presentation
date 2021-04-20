@@ -47,8 +47,8 @@ function ComplexoIndex() {
                 <div className="button-container">
                     <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right" link="/video"/>
                     <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left" link="/projeto"/>
-                    <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right"/>
-                    <ImageButton title="Unidades" image={unitsIcon} extraClass="slide-left" link="/unidades"/>
+                    <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right" link="/areascomuns"/>
+                    <ImageButton title="Condomínios" image={unitsIcon} extraClass="slide-left" link="/unidades"/>
                     <ImageButton title="Localização" image={locationIcon} extraClass="slide-right"/>
                     <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true} extraClass="slide-left" link="/tour-virtual"/>
                 </div>
