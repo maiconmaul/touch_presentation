@@ -142,7 +142,6 @@
     height: 100%;
     width: 600px;
 }
-
 #pageproject .middle-container main .main-container .project .right {
     display: flex;
     align-items: center;
@@ -166,6 +165,10 @@
     width: 600px;
 
     padding: 10px;
+}
+
+#pageproject .middle-container main .main-container .datasheet .left img{
+    max-width: 260px;
 }
 
 #pageproject .middle-container main .main-container .datasheet .right {

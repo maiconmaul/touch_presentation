@@ -10,12 +10,12 @@ import complexoImg from '../../assets/img/buildings/complexo-index.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
 import arquitetosLogo from '../../assets/img/konigsberger_vannucchi.png'
 import projetoProjeto from '../../assets/img/buildings/projeto_projeto.png'
-import projetoDatasheet from '../../assets/img/buildings/projeto_datasheet.png'
-import projetoDatasheetInfo0 from '../../assets/img/projeto-datasheet-info0.png'
-import projetoDatasheetInfo1 from '../../assets/img/projeto-datasheet-info1.png'
-import projetoDatasheetInfo2 from '../../assets/img/projeto-datasheet-info2.png'
-import projetoDatasheetInfo3 from '../../assets/img/projeto-datasheet-info3.png'
-import projetoDatasheetInfo4 from '../../assets/img/projeto-datasheet-info4.png'
+import projetoDatasheet from '../../assets/img/buildings/complexo-projeto_datasheet.png'
+import projetoDatasheetInfo0 from '../../assets/img/complexo/projeto/datasheet-info0.png'
+import projetoDatasheetInfo1 from '../../assets/img/complexo/projeto/datasheet-info1.png'
+import projetoDatasheetInfo2 from '../../assets/img/complexo/projeto/datasheet-info2.png'
+import projetoDatasheetInfo3 from '../../assets/img/complexo/projeto/datasheet-info3.png'
+// import projetoDatasheetInfo4 from '../../assets/img/complexo/projeto/datasheet-info4.png'
 
 import './style.css'
 import IdleTimer from '../../elements/IdleTimer';
@@ -87,7 +87,6 @@ function ProjectPage() {
                                     <img src={projetoDatasheetInfo1} alt=""/>
                                     <img src={projetoDatasheetInfo2} alt=""/>
                                     <img src={projetoDatasheetInfo3} alt=""/>
-                                    <img src={projetoDatasheetInfo4} alt=""/>
                                 </div>
                                 <div className="right">
                                     <BorderedImg img={projetoDatasheet} />

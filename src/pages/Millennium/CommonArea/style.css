@@ -1,0 +1,98 @@
+#millennium-commonarea-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#millennium-commonarea-page .top-container {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    
+    margin-top: 30px;
+}
+
+#millennium-commonarea-page .top-container .logo-container {
+    width: 300px;
+    margin: 0px 30px;
+}
+
+#millennium-commonarea-page .horizontal-line{
+    background-color: #fff;
+    height: 10px;
+    width: 100%;
+}
+
+#millennium-commonarea-page .top-container button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: -10px 30px 0px;
+    
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+#millennium-commonarea-page .middle-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#millennium-commonarea-page .middle-container .vertical-line{
+    background-color: #fff;
+    width: 10px;
+    height: 100%;
+    margin: 20px 10px 0px 75px;
+}
+
+#millennium-commonarea-page .middle-container div.vertical-line:last-child{
+    margin: -15px 30px 0px 10px;
+    height: calc(100% + 35px);
+}
+
+#millennium-commonarea-page .middle-container main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1775px;
+    width: 1775px;
+    position: relative;
+
+    margin-top: -50px;
+}
+
+#millennium-commonarea-page .middle-container main img{
+    max-height: 850px;
+}
+
+#millennium-commonarea-page > .horizontal-line{
+    margin: 10px 30px 0px 75px;
+    width: auto;
+}
+
+#millennium-commonarea-page footer {
+    display: flex;
+    padding: 20px 20px 30px;
+}
+
+#millennium-commonarea-page footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#millennium-commonarea-page footer button img {
+    margin-right: 20px;
+}

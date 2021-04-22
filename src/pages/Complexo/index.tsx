@@ -14,7 +14,7 @@ import locationIcon from '../../assets/img/location.png'
 import tourVirtualIcon from '../../assets/img/tour-virtual.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
 // import complexoBuildingProgressive from '../../assets/img/complexo-building-progressive.jpg'
-import complexoBuilding from '../../assets/img/complexo-building.jpg'
+import complexoBuilding from '../../assets/img/fachada/complexo-building.jpg'
 import ImageButton from '../../elements/ImageButton'
 
 
@@ -46,10 +46,10 @@ function ComplexoIndex() {
                 </div>
                 <div className="button-container">
                     <ImageButton title="Vídeo" image={videoIcon} extraClass="slide-right" link="/video"/>
-                    <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left" link="/projeto"/>
+                    <ImageButton title="Projeto" image={projectIcon} extraClass="slide-left" link="/complexo/projeto"/>
                     <ImageButton title="Áreas Comuns" image={commonAreasIcon} extraClass="slide-right" link="/areascomuns"/>
                     <ImageButton title="Condomínios" image={unitsIcon} extraClass="slide-left" link="/unidades"/>
-                    <ImageButton title="Localização" image={locationIcon} extraClass="slide-right"/>
+                    <ImageButton title="Localização" image={locationIcon} extraClass="slide-right" link="/localizacao"/>
                     <ImageButton title="Tour Virtual" image={tourVirtualIcon} border={true} extraClass="slide-left" link="/tour-virtual"/>
                 </div>
                 <div className="footer">

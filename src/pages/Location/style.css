@@ -1,0 +1,108 @@
+#locationpage {
+    /* position: relative; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#locationpage .top-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+#locationpage .top-container .logo-container {
+    width: 300px;
+    margin: 0px 30px;
+}
+
+#locationpage .horizontal-line {
+    background-color: #fff;
+    height: 10px;
+    width: 100%;
+    /* margin: 0px 0px 0px 0px; */
+}
+
+#locationpage .horizontal-line.half {
+    width: 20%;
+}
+
+#locationpage .horizontal-line.end {
+    align-self: flex-end;
+}
+
+#locationpage .top-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -10px 30px 0px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+#locationpage .middle-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#locationpage .middle-container .vertical-line {
+    background-color: #fff;
+    width: 10px;
+    height: calc(100% + 10px);
+    margin: 00px 10px 0px 75px;
+}
+
+#locationpage .vertical-line.half {
+    background-color: #fff;
+    width: 10px;
+    height: 100PX;
+    margin: 0PX;
+}
+
+#locationpage .middle-container div.vertical-line:last-child {
+    margin: -35px 30px 0px 10px;
+    height: calc(100% + 45px);
+}
+
+#locationpage .middle-container main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#locationpage .middle-container main img{
+    width: 1430px;
+}
+#locationpage>.horizontal-line {
+    margin: 10px 30px 0px 75px;
+    width: auto;
+}
+
+#locationpage footer {
+    display: flex;
+    padding: 20px 20px 30px;
+}
+
+#locationpage footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#locationpage footer button img {
+    margin-right: 20px;
+}

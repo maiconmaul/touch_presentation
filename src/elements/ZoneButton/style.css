@@ -1,0 +1,14 @@
+#zone-button{
+    position: absolute;
+    /* background-color: rgba(0, 255, 255, 0.507); */
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+
+    outline: 0;
+}
+
+#zone-button img{
+    height: 40px;
+    width: 40px;
+}

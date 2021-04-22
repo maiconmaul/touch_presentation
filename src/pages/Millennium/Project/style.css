@@ -1,0 +1,141 @@
+#millennium-pageproject {
+    /* position: relative; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#millennium-pageproject .top-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+#millennium-pageproject .top-container .logo-container {
+    width: 300px;
+    margin: 0px 30px;
+}
+
+#millennium-pageproject .horizontal-line {
+    background-color: #fff;
+    height: 10px;
+    width: 100%;
+    /* margin: 0px 0px 0px 0px; */
+}
+
+#millennium-pageproject .horizontal-line.half {
+    width: 20%;
+}
+
+#millennium-pageproject .horizontal-line.end {
+    align-self: flex-end;
+}
+
+#millennium-pageproject .top-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -10px 30px 0px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+}
+
+#millennium-pageproject .middle-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#millennium-pageproject .middle-container .vertical-line {
+    background-color: #fff;
+    width: 10px;
+    height: calc(100% + 10px);
+    margin: 00px 10px 0px 75px;
+}
+
+#millennium-pageproject .vertical-line.half {
+    background-color: #fff;
+    width: 10px;
+    height: 100PX;
+    margin: 0PX;
+}
+
+#millennium-pageproject .middle-container div.vertical-line:last-child {
+    margin: -35px 30px 0px 10px;
+    height: calc(100% + 45px);
+}
+
+#millennium-pageproject .middle-container main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#millennium-pageproject .middle-container main .main-container {
+    /* background-color: red; */
+    flex: 1;
+}
+
+#millennium-pageproject .middle-container main .main-container .datasheet {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#millennium-pageproject .middle-container main .main-container .datasheet .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+
+    height: 100%;
+    width: 600px;
+
+    padding: 10px;
+}
+
+#millennium-pageproject .middle-container main .main-container .datasheet .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#millennium-pageproject .middle-container main .buttons-container {
+    display: flex;
+    /* justify-content: space-evenly; */
+    width: 45%;
+    margin: 10px 0px;
+}
+
+#millennium-pageproject>.horizontal-line {
+    margin: 10px 30px 0px 75px;
+    width: auto;
+}
+
+#millennium-pageproject footer {
+    display: flex;
+    padding: 20px 20px 30px;
+}
+
+#millennium-pageproject footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#millennium-pageproject footer button img {
+    margin-right: 20px;
+}

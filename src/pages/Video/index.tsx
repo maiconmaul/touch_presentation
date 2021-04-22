@@ -33,7 +33,7 @@ function VideoPage() {
             <footer>
                 <button onClick={() => { history.goBack(); }}>
                 <img src={backButtonIcon} alt="" />
-                    Voltar ao Menu Principal
+                    Voltar
                 </button>
             </footer>
         </div>

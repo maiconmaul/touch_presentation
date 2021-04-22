@@ -28,7 +28,7 @@ interface DictionarySlide {
     [key: string]: Array<SlideImages>
 }
 
-function CommonAreasPage() {
+function ComplexoCommonAreasPage() {
     let { goBack } = useHistory()
 
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -131,11 +131,11 @@ function CommonAreasPage() {
             <footer>
                 <button onClick={() => { goBack(); }}>
                     <img src={backButtonIcon} alt="" />
-                    Voltar ao Menu Principal
+                    Voltar
                 </button>
             </footer>
         </div>
     )
 }
 
-export default CommonAreasPage
+export default ComplexoCommonAreasPage

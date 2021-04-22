@@ -13,7 +13,7 @@ import checkedIcon from '../../assets/img/checked.svg'
 import areaIcon from '../../assets/img/move.svg'
 import bedIcon from '../../assets/img/bed.svg'
 import complexoBuildingProgressive from '../../assets/img/complexo-building-progressive.jpg'
-import complexoBuilding from '../../assets/img/complexo-building.jpg'
+import complexoBuilding from '../../assets/img/fachada/complexo-building.jpg'
 
 import './style.css'
 
@@ -49,9 +49,9 @@ function Index() {
                 </div>
                 <div className="button-container">
                     <DefaultButton title="COMPLEXO" onClick={() => handleDestination("/complexo")} />
-                    <DefaultButton title="ELLIPSE TOWER" description="Torre Comercial"/>
-                    <DefaultButton title="HIGHLINE (PANORAMA)" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/panorama")} />
-                    <DefaultButton title="MILLENNIUM" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => console.log("rour virtual")} />
+                    <DefaultButton title="ELLIPSE TOWER" description="Torre Comercial" onClick={() => handleDestination("/ellipse")}/>
+                    <DefaultButton title="HIGHLINE" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/highline")} />
+                    <DefaultButton title="MILLENNIUM" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => handleDestination("/millennium")}/>
                 </div>
                 <div className="footer">
                     <div>
