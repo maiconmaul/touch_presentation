@@ -67,9 +67,9 @@ function HighlineUnitysPage() {
 
                                     <div className="image-container">
                                         <img src={apto55} alt="" />
-                                        <ZoneButton x={460} y={280} height={300} width={340}/> {/* sala */}
-                                        <ZoneButton x={200} y={580} height={200} width={280}/> {/* varanda */}
-                                        <ZoneButton x={200} y={300} height={280} width={260}/> {/* suite */}
+                                        {/* <ZoneButton x={460} y={280} height={300} width={340}/> sala */}
+                                        {/* <ZoneButton x={200} y={580} height={200} width={280}/> varanda */}
+                                        {/* <ZoneButton x={200} y={300} height={280} width={260}/> suite */}
                                         {/* <ZoneButton x={200} y={300} height={330} width={320}/> */}
                                     </div>
                                     <div className="text-container">
@@ -100,8 +100,8 @@ function HighlineUnitysPage() {
 
                                     <div className="image-container">
                                         <img src={apto79} alt="" />
-                                        <ZoneButton x={20} y={180} height={410} width={320} /> {/* suite */}
-                                        <ZoneButton x={615} y={590} height={190} width={290} /> {/* varanda */}
+                                        {/* <ZoneButton x={20} y={180} height={410} width={320} /> suite */}
+                                        {/* <ZoneButton x={615} y={590} height={190} width={290} /> varanda */}
                                         <ZoneButton x={610} y={270} height={310} width={300} onClick={() => history.push("/highline/areascomuns/galeria/2/0")} /> {/* sala */}
                                     </div>
                                     <div className="text-container">
