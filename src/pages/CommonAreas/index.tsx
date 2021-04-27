@@ -16,8 +16,9 @@ import rightArrow from '../../assets/img/right-arrow.svg'
 
 import './style.css'
 import "./carousel.min.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ActionButton from "../../elements/ActionButton";
+import IdleTimer from "../../elements/IdleTimer";
 
 interface SlideImages {
     path: string
@@ -29,10 +30,23 @@ interface DictionarySlide {
 }
 
 function ComplexoCommonAreasPage() {
-    let { goBack } = useHistory()
+    let history = useHistory()
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [index, setIndex] = useState(0)
+
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     const imagesDict2: DictionarySlide = {
         '0': [{
@@ -109,7 +123,7 @@ function ComplexoCommonAreasPage() {
                     </button>
                     <div className="buttom-container">
                         <ActionButton title="Praça" extraClass={index === 0 ? "selected bounce-top" : "fade-in"} onClick={() => setIndex(0)} />
-                        <ActionButton title="Sub Solo" extraClass={index === 1 ? "selected bounce-top" : "fade-in"} onClick={() => setIndex(1)} />
+                        {/* <ActionButton title="Sub Solo" extraClass={index === 1 ? "selected  bounce-top" : "fade-in"} onClick={() => setIndex(1)} /> */}
                     </div>
                     <div className="thumb-container-parent">
                         <div className="thumb-container-child">
@@ -129,7 +143,7 @@ function ComplexoCommonAreasPage() {
             </div>
             <div className="horizontal-line" />
             <footer>
-                <button onClick={() => { goBack(); }}>
+                <button onClick={() => { history.goBack(); }}>
                     <img src={backButtonIcon} alt="" />
                     Voltar
                 </button>

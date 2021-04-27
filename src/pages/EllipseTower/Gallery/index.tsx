@@ -19,6 +19,7 @@ import rightArrow from '../../../assets/img/right-arrow.svg'
 
 import './style.css'
 import "./carousel.min.css";
+import IdleTimer from "../../../elements/IdleTimer";
 
 interface RouteParams {
     id: string
@@ -26,13 +27,12 @@ interface RouteParams {
 }
 
 function EllipseGalleryPage() {
-    let { goBack } = useHistory()
+    let history = useHistory()
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [imgArray, setImgArray] = useState<{ path: string; name?: string; }[]>()
 
     const { id, index } = useParams<RouteParams>();
-
     useEffect(() => {
         switch (id) {
             case "0":
@@ -46,11 +46,24 @@ function EllipseGalleryPage() {
                 break;
         }
         updateCurrentSlide(parseInt(index))
+        // eslint-disable-next-line
     }, [])
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     const ellipseArray0 = [{
         path: ellipseA0
-    },{
+    }, {
         path: ellipseA1
     }]
 
@@ -100,9 +113,9 @@ function EllipseGalleryPage() {
                                     return (
                                         <div key={image.path}>
                                             <img src={image.path} alt="" />
-                                            { 
+                                            {
                                                 image.name ?
-                                                    <p className="legend">{image.name}</p>:
+                                                    <p className="legend">{image.name}</p> :
                                                     <> </>
                                             }
                                         </div>
@@ -119,7 +132,7 @@ function EllipseGalleryPage() {
             </div>
             <div className="horizontal-line" />
             <footer>
-                <button onClick={() => { goBack(); }}>
+                <button onClick={() => { history.goBack(); }}>
                     <img src={backButtonIcon} alt="" />
                     Voltar
                 </button>

@@ -1,4 +1,11 @@
 #zone-button{
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+#zone-button button{
     position: absolute;
     /* background-color: rgba(0, 255, 255, 0.507); */
     background-color: transparent;
@@ -9,6 +16,7 @@
 }
 
 #zone-button img{
+    position: absolute;
     height: 40px;
     width: 40px;
 }

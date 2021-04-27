@@ -12,7 +12,7 @@ import CondominiumsPage from './pages/Condominiums';
 import VideoPage from './pages/Video';
 import VideoFullPage from './pages/VideoFull';
 import VirtualTourPage from './pages/VirtualTour';
-import HighlineUnitysPage from './pages/Highline/Unitys';
+import HighlineUnitsPage from './pages/Highline/Units';
 import HighlineGalleryPage from './pages/Highline/Gallery';
 import LocationPage from './pages/Location';
 import HighlineCommonAreasPage from './pages/Highline/CommonArea';
@@ -23,7 +23,7 @@ import MillenniumIndex from './pages/Millennium';
 import MillenniumProjectPage from './pages/Millennium/Project';
 import MillenniumCommonAreasPage from './pages/Millennium/CommonArea';
 import MillenniumGalleryPage from './pages/Millennium/Gallery';
-import MillenniumUnitysPage from './pages/Millennium/Unitys';
+import MillenniumUnitsPage from './pages/Millennium/Units';
 
 function Routes(): ReactElement {
   return (
@@ -44,7 +44,7 @@ function Routes(): ReactElement {
       <Route path="/highline/projeto" component={ HighlineProjectPage } />
       <Route path="/highline/areascomuns" exact component={ HighlineCommonAreasPage } />
       <Route path="/highline/areascomuns/galeria/:id/:index" component={ HighlineGalleryPage } />
-      <Route path="/highline/unidades" component={HighlineUnitysPage} />
+      <Route path="/highline/unidades" component={HighlineUnitsPage} />
       {/* ELLIPSE */}
       <Route path="/ellipse" exact component={EllipseIndex} />
       <Route path="/ellipse/projeto" component={ EllipseProjectPage } />
@@ -56,7 +56,7 @@ function Routes(): ReactElement {
       <Route path="/millennium/projeto" component={ MillenniumProjectPage } />
       <Route path="/millennium/areascomuns" exact component={ MillenniumCommonAreasPage } />
       <Route path="/millennium/galeria/:id/:index" component={ MillenniumGalleryPage } />
-      <Route path="/millennium/unidades" component={MillenniumUnitysPage} />
+      <Route path="/millennium/unidades" component={MillenniumUnitsPage} />
 
       
       {/* <Redirect to="/" /> */}

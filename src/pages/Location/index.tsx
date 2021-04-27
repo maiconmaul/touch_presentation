@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 
+import IdleTimer from '../../elements/IdleTimer';
+
 import logo from '../../assets/img/logo-psg.png'
 import backButtonIcon from '../../assets/img/backbutton.png'
 import locationPage from '../../assets/img/location-page.png'
 
 import './style.css'
-import IdleTimer from '../../elements/IdleTimer';
 
 function LocationPage() {
     let history = useHistory()

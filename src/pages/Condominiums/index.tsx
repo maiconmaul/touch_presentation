@@ -79,9 +79,9 @@ function CondominiumsPage() {
                 <div className="side-menu">
                     <div className="button-container">
                         <DefaultButton title="COMPLEXO" extraClass={index === 0 ? "selected" : "fade-in"} onClick={() => handleClick(0)} />
-                        <DefaultButton title="ellipse tower" description="Torre Comercial" extraClass={index === 1 ? "selected" : "fade-in"} onClick={() => handleClick(1)} />
-                        <DefaultButton title="highline" description="Apartamentos Residenciais de 55 a 110m²" extraClass={index === 2 ? "selected" : "fade-in"} onClick={() => handleClick(2)} />
-                        <DefaultButton title="millennium" description="Apartamentos Residenciais de 127 a 201m²" extraClass={index === 3 ? "selected" : "fade-in"} onClick={() => handleClick(3)} />
+                        <DefaultButton title="ELLIPSE TOWER" description="Torre Comercial" extraClass={index === 1 ? "selected" : "fade-in"} onClick={() => handleClick(1)} />
+                        <DefaultButton title="HIGHLINE" description="Apartamentos Residenciais de 55 a 110m²" extraClass={index === 2 ? "selected" : "fade-in"} onClick={() => handleClick(2)} />
+                        <DefaultButton title="MILLENNIUM" description="Apartamentos Residenciais de 127 a 201m²" extraClass={index === 3 ? "selected" : "fade-in"} onClick={() => handleClick(3)} />
                     </div>
                     <div className="logo-container">
                         <img src={psgLogoDuoColor} alt=""/>

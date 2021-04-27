@@ -8,12 +8,14 @@ import IdleTimer from '../../elements/IdleTimer'
 
 import logo from '../../assets/img/logo-psg.png'
 import complexoImg from '../../assets/img/buildings/complexo-index.png'
-import maplocationIcon from '../../assets/img/placeholder.svg'
-import checkedIcon from '../../assets/img/checked.svg'
-import areaIcon from '../../assets/img/move.svg'
-import bedIcon from '../../assets/img/bed.svg'
+// import maplocationIcon from '../../assets/img/placeholder.svg'
+// import checkedIcon from '../../assets/img/checked.svg'
+// import areaIcon from '../../assets/img/move.svg'
+// import bedIcon from '../../assets/img/bed.svg'
 import complexoBuildingProgressive from '../../assets/img/complexo-building-progressive.jpg'
 import complexoBuilding from '../../assets/img/fachada/complexo-building.jpg'
+
+import locationPage from '../../assets/img/location-page.png'
 
 import './style.css'
 
@@ -31,13 +33,14 @@ function Index() {
             timer.cleanUp();
         };
     });
-
+    
     function handleDestination(dest: string) {
         if (dest !== "" && dest !== undefined && dest !== " ") {
             history.push(dest)
         }
     }
-
+    
+    console.log(locationPage)
     console.log(complexoBuildingProgressive)
     console.log(complexoBuilding)
 
@@ -53,7 +56,7 @@ function Index() {
                     <DefaultButton title="HIGHLINE" description="Apartamentos Residenciais de 55 a 110m²" onClick={() => handleDestination("/highline")} />
                     <DefaultButton title="MILLENNIUM" description="Apartamentos Residenciais de 127 a 201m²" onClick={() => handleDestination("/millennium")}/>
                 </div>
-                <div className="footer">
+                {/* <div className="footer">
                     <div>
                         <div>
                             <img src={areaIcon} alt="" />
@@ -80,7 +83,7 @@ function Index() {
                         </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="image-container">
                 <div>

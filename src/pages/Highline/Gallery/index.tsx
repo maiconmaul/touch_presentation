@@ -6,14 +6,14 @@ import logo from '../../../assets/img/logo-psg.png'
 import backButtonIcon from '../../../assets/img/backbutton.png'
 
 
-import highline0 from '../../../assets/img/highline/areascomuns/0.jpg'
 import highline1 from '../../../assets/img/highline/areascomuns/1.jpg'
 import highline2 from '../../../assets/img/highline/areascomuns/2.jpg'
 import highline3 from '../../../assets/img/highline/areascomuns/3.jpg'
 import highline4 from '../../../assets/img/highline/areascomuns/4.jpg'
 import highline5 from '../../../assets/img/highline/areascomuns/5.jpg'
 import highline6 from '../../../assets/img/highline/areascomuns/6.jpg'
-import highline7 from '../../../assets/img/highline/areascomuns/7.jpg'
+import highline70 from '../../../assets/img/highline/areascomuns/7_0.jpg'
+import highline71 from '../../../assets/img/highline/areascomuns/7_1.jpg'
 import highline8 from '../../../assets/img/highline/areascomuns/8.jpg'
 import highline9 from '../../../assets/img/highline/areascomuns/9.jpg'
 import highline10 from '../../../assets/img/highline/areascomuns/10.jpg'
@@ -31,18 +31,19 @@ import highline21 from '../../../assets/img/highline/areascomuns/21.jpg'
 import highline22 from '../../../assets/img/highline/areascomuns/22.jpg'
 import highline23 from '../../../assets/img/highline/areascomuns/23.jpg'
 import highline24 from '../../../assets/img/highline/areascomuns/24.jpg'
-import highline25 from '../../../assets/img/highline/areascomuns/25.jpg'
-import highline26 from '../../../assets/img/highline/areascomuns/26.jpg'
 
-// import highline00 from '../../../assets/img/gallery/complexo-01.jpg'
-// import highline01 from '../../../assets/img/gallery/complexo-02.jpg'
-// import highline02 from '../../../assets/img/gallery/complexo-03.jpg'
+import highline00 from '../../../assets/img/highline/unidades/apto55-0.jpg'
+import highline01 from '../../../assets/img/highline/unidades/apto55-1.jpg'
+import highline02 from '../../../assets/img/highline/unidades/apto55-2.jpg'
+
 import highlineA10 from '../../../assets/img/highline/unidades/apto78-0.jpg'
 import highlineA11 from '../../../assets/img/highline/unidades/apto78-1.jpg'
 import highlineA12 from '../../../assets/img/highline/unidades/apto78-2.jpg'
+
 import highlineA20 from '../../../assets/img/highline/unidades/apto79-0.jpg'
-// import highline21 from '../../../assets/img/gallery/complexo-02.jpg'
-// import highline22 from '../../../assets/img/gallery/complexo-03.jpg'
+import highlineA21 from '../../../assets/img/highline/unidades/apto79-1.jpg'
+import highlineA22 from '../../../assets/img/highline/unidades/apto79-2.jpg'
+
 import highline30 from '../../../assets/img/highline/unidades/apto106-0.jpg'
 import highline310 from '../../../assets/img/highline/unidades/apto106-10.jpg'
 import highline311 from '../../../assets/img/highline/unidades/apto106-11.jpg'
@@ -53,6 +54,7 @@ import rightArrow from '../../../assets/img/right-arrow.svg'
 
 import './style.css'
 import "./carousel.min.css";
+import IdleTimer from "../../../elements/IdleTimer";
 
 interface RouteParams {
     id: string
@@ -60,12 +62,24 @@ interface RouteParams {
 }
 
 function HighlineGalleryPage() {
-    let { goBack } = useHistory()
+    let history = useHistory()
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [imgArray, setImgArray] = useState<{ path: string; name?: string; }[]>()
 
     const { id, index } = useParams<RouteParams>();
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     useEffect(() => {
         switch (id) {
@@ -89,11 +103,18 @@ function HighlineGalleryPage() {
                 break;
         }
         updateCurrentSlide(parseInt(index))
+        // eslint-disable-next-line
     }, [])
 
     const highlineArray0 = [{
-        path: highlineA10,
+        path: highline00,
+        name: "Suíte"
+    },{
+        path: highline01,
         name: "Living"
+    },{
+        path: highline02,
+        name: "Varanda Gourmet"
     }]
 
     const highlineArray1 = [{
@@ -110,7 +131,13 @@ function HighlineGalleryPage() {
     const highlineArray2 = [{
         path: highlineA20,
         name: "Living"
-    }]
+    },{
+        path: highlineA21,
+        name: "Suíte"
+    },{
+        path: highlineA22,
+        name: "Varanda Gourmet"
+    },]
 
     const highlineArray3 = [{
         path: highline30,
@@ -128,33 +155,106 @@ function HighlineGalleryPage() {
 
 
     const images = [
-        { path: highline0 },
-        { path: highline1 },
-        { path: highline2 },
-        { path: highline3 },
-        { path: highline4 },
-        { path: highline5 },
-        { path: highline6 },
-        { path: highline7 },
-        { path: highline8 },
-        { path: highline9 },
-        { path: highline10 },
-        { path: highline11 },
-        { path: highline12 },
-        { path: highline13 },
-        { path: highline14 },
-        { path: highline15 },
-        { path: highline16 },
-        { path: highline17 },
-        { path: highline18 },
-        { path: highline19 },
-        { path: highline20 },
-        { path: highline21 },
-        { path: highline22 },
-        { path: highline23 },
-        { path: highline24 },
-        { path: highline25 },
-        { path: highline26 },
+        {
+            path: highline1,
+            name: "Portaria"
+        },
+        { 
+            path: highline2,
+            name: "Entrada/Saída Veículos"
+        },
+        { 
+            path: highline3,
+            name: "Coworking Externo"
+        },
+        { 
+            path: highline4,
+            name: "Apoio Salão de Festas Externo"
+        },
+        {
+            path: highline5,
+            name: "Salão de Festas"
+        },
+        {
+            path: highline6,
+            name: "Coworking"
+        },
+        {
+            path: highline70,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: highline71,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: highline8,
+            name: "Lounge Bar"
+        },
+        {
+            path: highline9,
+            name: "Horta"
+        },
+        {
+            path: highline10,
+            name: "Churrasqueira"
+        },
+        {
+            path: highline11,
+            name: "Redário"
+        },
+        {
+            path: highline12,
+            name: "Piscina Adulto"
+        },
+        {
+            path: highline13,
+            name: "Piscina Infantil"
+        },
+        {
+            path: highline14,
+            name: "Fitness"
+        },
+        {
+            path: highline15,
+            name: "Locker"
+        },
+        {
+            path: highline16,
+            name: "Espaço Pet"
+        },
+        {
+            path: highline17,
+            name: "Pet Garden"
+        },
+        {
+            path: highline18,
+            name: "Yoga"
+        },
+        {
+            path: highline19,
+            name: "Lobby"
+        },
+        {
+            path: highline20,
+            name: "Sala de Massagem"
+        },
+        {
+            path: highline21,
+            name: "Espaço Teen"
+        },
+        { 
+            path: highline22,
+            name: "Kids"
+        },
+        {
+            path: highline23,
+            name: "Playground"
+        },
+        {
+            path: highline24,
+            name: "Quadra Esportiva"
+        },
     ]
 
     function next() {
@@ -214,7 +314,7 @@ function HighlineGalleryPage() {
             </div>
             <div className="horizontal-line" />
             <footer>
-                <button onClick={() => { goBack(); }}>
+                <button onClick={() => { history.goBack(); }}>
                     <img src={backButtonIcon} alt="" />
                     Voltar
                 </button>

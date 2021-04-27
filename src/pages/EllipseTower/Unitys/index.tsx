@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import logo from '../../../assets/img/logo-psg.png'
@@ -12,11 +12,25 @@ import ActionButton from "../../../elements/ActionButton";
 
 import './style.css'
 import ZoneButton from "../../../elements/ZoneButton";
+import IdleTimer from "../../../elements/IdleTimer";
 
 function HighlineUnitysPage() {
     let history = useHistory()
 
     const [selectedIndex, setSelectedIndex] = useState(0)
+
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     const unitys = [
         {
@@ -67,9 +81,9 @@ function HighlineUnitysPage() {
 
                                     <div className="image-container">
                                         <img src={apto55} alt="" />
-                                        <ZoneButton x={460} y={280} height={300} width={340}/> {/* sala */}
-                                        <ZoneButton x={200} y={580} height={200} width={280}/> {/* varanda */}
-                                        <ZoneButton x={200} y={300} height={280} width={260}/> {/* suite */}
+                                        <ZoneButton x={460} y={280} height={300} width={340} /> {/* sala */}
+                                        <ZoneButton x={200} y={580} height={200} width={280} /> {/* varanda */}
+                                        <ZoneButton x={200} y={300} height={280} width={260} /> {/* suite */}
                                         {/* <ZoneButton x={200} y={300} height={330} width={320}/> */}
                                     </div>
                                     <div className="text-container">

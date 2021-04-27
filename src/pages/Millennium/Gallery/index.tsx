@@ -6,12 +6,13 @@ import logo from '../../../assets/img/logo-psg.png'
 import backButtonIcon from '../../../assets/img/backbutton.png'
 
 
-
-import millennium0 from '../../../assets/img/millennium/areascomuns/0.jpg'
 import millennium1 from '../../../assets/img/millennium/areascomuns/1.jpg'
-import millennium2 from '../../../assets/img/millennium/areascomuns/2.jpg'
-import millennium3 from '../../../assets/img/millennium/areascomuns/3.jpg'
-import millennium4 from '../../../assets/img/millennium/areascomuns/4.jpg'
+import millennium30 from '../../../assets/img/millennium/areascomuns/3_0.jpg'
+import millennium31 from '../../../assets/img/millennium/areascomuns/3_1.jpg'
+import millennium32 from '../../../assets/img/millennium/areascomuns/3_2.jpg'
+import millennium33 from '../../../assets/img/millennium/areascomuns/3_3.jpg'
+import millennium40 from '../../../assets/img/millennium/areascomuns/4_0.jpg'
+import millennium41 from '../../../assets/img/millennium/areascomuns/4_1.jpg'
 import millennium5 from '../../../assets/img/millennium/areascomuns/5.jpg'
 import millennium6 from '../../../assets/img/millennium/areascomuns/6.jpg'
 import millennium7 from '../../../assets/img/millennium/areascomuns/7.jpg'
@@ -29,7 +30,7 @@ import millennium18 from '../../../assets/img/millennium/areascomuns/18.jpg'
 import millennium19 from '../../../assets/img/millennium/areascomuns/19.jpg'
 import millennium20 from '../../../assets/img/millennium/areascomuns/20.jpg'
 import millennium21 from '../../../assets/img/millennium/areascomuns/21.jpg'
-
+import millennium22 from '../../../assets/img/millennium/areascomuns/22.jpg'
 
 import millenniumU000 from '../../../assets/img/millennium/unidades/apto127-00.jpg'
 import millenniumU001 from '../../../assets/img/millennium/unidades/apto127-01.jpg'
@@ -48,6 +49,7 @@ import rightArrow from '../../../assets/img/right-arrow.svg'
 
 import './style.css'
 import "./carousel.min.css";
+import IdleTimer from "../../../elements/IdleTimer";
 
 interface RouteParams {
     id: string
@@ -55,12 +57,25 @@ interface RouteParams {
 }
 
 function MillenniumGalleryPage() {
-    let { goBack } = useHistory()
+    let history = useHistory()
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [imgArray, setImgArray] = useState<{ path: string; name?: string; }[]>()
 
     const { id, index } = useParams<RouteParams>();
+
+
+    useEffect(() => {
+        const timer = new IdleTimer({
+            timeout: parseInt(process.env.REACT_APP_TIMEOUT_DURATION ?? "120"), //expire after 10 seconds
+            onTimeout: () => {
+                history.push("/videofull")
+            }
+        });
+        return () => {
+            timer.cleanUp();
+        };
+    });
 
     useEffect(() => {
         switch (id) {
@@ -78,6 +93,7 @@ function MillenniumGalleryPage() {
                 break;
         }
         updateCurrentSlide(parseInt(index))
+        // eslint-disable-next-line
     }, [])
 
     const millenniumArray0 = [{
@@ -102,30 +118,107 @@ function MillenniumGalleryPage() {
         path: millenniumU13
     }]
 
-
     const images = [
-        { path: millennium0 },
-        { path: millennium1 },
-        { path: millennium2 },
-        { path: millennium3 },
-        { path: millennium4 },
-        { path: millennium5 },
-        { path: millennium6 },
-        { path: millennium7 },
-        { path: millennium8 },
-        { path: millennium9 },
-        { path: millennium10 },
-        { path: millennium11 },
-        { path: millennium12 },
-        { path: millennium13 },
-        { path: millennium14 },
-        { path: millennium15 },
-        { path: millennium16 },
-        { path: millennium17 },
-        { path: millennium18 },
-        { path: millennium19 },
-        { path: millennium20 },
-        { path: millennium21 }
+        {
+            path: millennium1,
+            name: "Portaria"
+        },
+        {
+            path: millennium30,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: millennium31,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: millennium32,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: millennium33,
+            name: "Lobby e Lockers"
+        },
+        {
+            path: millennium40,
+            name: "Coworking"
+        },
+        {
+            path: millennium41,
+            name: "Coworking"
+        },
+        {
+            path: millennium5,
+            name: "Fitness"
+        },
+        {
+            path: millennium6,
+            name: "Fitness Externo"
+        },
+        {
+            path: millennium7,
+            name: "Sala de Massagem"
+        },
+        {
+            path: millennium8,
+            name: "Espaço Kids"
+        },
+        {
+            path: millennium9,
+            name: "Quadra Esportiva"
+        },
+        {
+            path: millennium10,
+            name: "Playground"
+        },
+        {
+            path: millennium11,
+            name: "Redário"
+        },
+        {
+            path: millennium12,
+            name: "Churrasqueira"
+        },
+        {
+            path: millennium13,
+            name: "Horta"
+        },
+        {
+            path: millennium14,
+            name: "Espaço Gourmet"
+        },
+        {
+            path: millennium15,
+            name: "Praça Molhada"
+        },
+        {
+            path: millennium16,
+            name: "Espaço Pet"
+        },
+        {
+            path: millennium17,
+            name: "Salão de Jogos"
+        },
+        {
+            path: millennium18,
+            name: "salão de Festas"
+        },
+        {
+            path: millennium19,
+            name: "Apoio Salão de Festas Externo"
+        },
+        {
+            path: millennium20,
+            name: "Piscina Adulto"
+        },
+        {
+            path: millennium21,
+            name: "Piscina Infantil"
+        },
+        {
+            path: millennium22,
+            name: "Pet Garden"
+        }
     ]
 
     function next() {
@@ -185,7 +278,7 @@ function MillenniumGalleryPage() {
             </div>
             <div className="horizontal-line" />
             <footer>
-                <button onClick={() => { goBack(); }}>
+                <button onClick={() => { history.goBack(); }}>
                     <img src={backButtonIcon} alt="" />
                     Voltar
                 </button>

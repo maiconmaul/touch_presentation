@@ -59,8 +59,8 @@
 #highline-commonarea-page .middle-container main{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    max-width: 1775px;
+    justify-content: center;
+    /* max-width: 1775px; */
     width: 1775px;
     position: relative;
 
